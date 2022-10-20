@@ -25,7 +25,7 @@ def index():
 
     data=waybackurl(url,year)
     
-    return (data)
+    return jsonify(data)
     # return df.to_html()
     # return resp
 

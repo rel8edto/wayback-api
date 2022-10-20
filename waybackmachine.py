@@ -18,9 +18,16 @@ def waybackurl(url,year):
 
 
     near = cdx_api.near(year)
+
+    result={}
     oldurl=near.archive_url
     res=requests.get(oldurl)
-    return(res.content)
+
+    result['url']=url
+    result['waybackmachineLink']=oldurl
+    result['rawHtml']=res.text
+    result['waybackTime']=near.timestamp
+    return result
 
 
 
